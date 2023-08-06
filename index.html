@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora: Preços dos kks</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #f0f0f0;
+    }
+    
+    div {
+      background-color: #e0f2e9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #3caea3;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 5px;
+      border: 1px solid #3caea3;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #3caea3;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    p {
+      color: #f4a261;
+      margin: 10px 0;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Calculadora: Preço de Venda (Multiplicação por 1.60)</h1>
+    <input type="number" id="input160" placeholder="Digite o número">
+    <button onclick="calculate160()">Calcular</button>
+    <p>Valor que você vai receber: <span id="result160"></span></p>
+  </div>
+
+  <div>
+    <h1>Calculadora: Preço de Compra (Multiplicação por 1.70)</h1>
+    <input type="number" id="input170" placeholder="Digite o número">
+    <button onclick="calculate170()">Calcular</button>
+    <p>Valor que você vai pagar: <span id="result170"></span></p>
+  </div>
+
+  <script>
+    function calculate160() {
+      const input160 = parseFloat(document.getElementById('input160').value);
+      const result160 = input160 * 1.60;
+      document.getElementById('result160').textContent = result160.toFixed(2);
+    }
+
+    function calculate170() {
+      const input170 = parseFloat(document.getElementById('input170').value);
+      const result170 = input170 * 1.70;
+      document.getElementById('result170').textContent = result170.toFixed(2);
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Preço de Venda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Your existing CSS styles */
+
+    /* Add responsive styles for mobile */
+    @media (max-width: 600px) {
+      body {
+        margin: 10px;
+      }
+
+      div {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Your existing HTML content -->
+
+  <script>
+    /* Your existing JavaScript functions */
+  </script>
+</body>
+</html>
