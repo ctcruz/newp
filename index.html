@@ -69,13 +69,14 @@
     function calculate160() {
       const input160 = parseFloat(document.getElementById('input160').value);
       const result160 = input160 * 1.60;
-      document.getElementById('result160').textContent = result160.toFixed(2);
+      document.getElementById('result160').textContent = result160.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
     }
 
     function calculate170() {
       const input170 = parseFloat(document.getElementById('input170').value);
       const result170 = input170 * 1.70;
-      document.getElementById('result170').textContent = result170.toFixed(2);
+      document.getElementById('result170').textContent = result170.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});;
     }
   </script>
 </body>
