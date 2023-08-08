@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Calculadora: Preços dos kks</title>
   <style>
@@ -11,8 +12,9 @@
       flex-direction: column;
       background-color: #f0f0f0;
     }
-    
-    div {
+
+    .box {
+      width: 100%;
       background-color: #e0f2e9;
       padding: 20px;
       border-radius: 10px;
@@ -40,73 +42,75 @@
       cursor: pointer;
     }
 
-    p {
+    .result {
       color: #f4a261;
       margin: 10px 0;
+      display: none;
     }
 
     span {
       font-weight: bold;
     }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      gap: 30px
+    }
   </style>
 </head>
+
 <body>
-  <div>
-    <h1>Calculadora: Preço de Venda (Multiplicação por 1.60)</h1>
-    <input type="number" id="input160" placeholder="Digite o número">
-    <button onclick="calculate160()">Calcular</button>
-    <p>Valor que você vai receber: <span id="result160"></span></p>
+  <div class="container">
+    <div class="box">
+      <h1>Calculadora: Preço de Venda (Multiplicação por 1.60)</h1>
+      <input type="number" id="input160" placeholder="Digite o número">
+      <button onclick="calculate160()">Calcular</button>
+      <p class="result" id="wrapper-result160">Valor que você vai receber: <span id="result160"></span></p>
+    </div>
+    <div class="box">
+      <h1>Calculadora: Preço de Compra (Multiplicação por 1.70)</h1>
+      <input type="number" id="input170" placeholder="Digite o número">
+      <button onclick="calculate170()">Calcular</button>
+      <p class="result" id="wrapper-result170">Valor que você vai pagar: <span id="result170"></span></p>
+    </div>
   </div>
-
-  <div>
-    <h1>Calculadora: Preço de Compra (Multiplicação por 1.70)</h1>
-    <input type="number" id="input170" placeholder="Digite o número">
-    <button onclick="calculate170()">Calcular</button>
-    <p>Valor que você vai pagar: <span id="result170"></span></p>
-  </div>
-
   <script>
     function calculate160() {
-      const input160 = parseFloat(document.getElementById('input160').value);
+      document.getElementById('wrapper-result160').style.display = 'none'
+
+      const inputValue = document.getElementById('input160').value
+
+      if (inputValue === '') {
+        alert('Insira um valor para calcular!');
+        return;
+      }
+
+      const input160 = parseFloat(inputValue);
       const result160 = input160 * 1.60;
-      document.getElementById('result160').textContent = result160.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+      document.getElementById('result160').textContent = result160.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+      document.getElementById('wrapper-result160').style.display = 'block'
 
     }
 
     function calculate170() {
-      const input170 = parseFloat(document.getElementById('input170').value);
+      document.getElementById('wrapper-result170').style.display = 'none'
+
+      const inputValue = document.getElementById('input170').value
+
+      if (inputValue === '') {
+        alert('Insira um valor para calcular!');
+        return;
+      }
+
+      const input170 = parseFloat(inputValue);
       const result170 = input170 * 1.70;
-      document.getElementById('result170').textContent = result170.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});;
+      document.getElementById('result170').textContent = result170.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });;
+      document.getElementById('wrapper-result170').style.display = 'block'
     }
   </script>
 </body>
-</html>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Calculadora de Preço de Venda</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Your existing CSS styles */
-
-    /* Add responsive styles for mobile */
-    @media (max-width: 600px) {
-      body {
-        margin: 10px;
-      }
-
-      div {
-        width: 100%;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Your existing HTML content -->
-
-  <script>
-    /* Your existing JavaScript functions */
-  </script>
-</body>
 </html>
